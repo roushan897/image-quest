@@ -1,0 +1,5 @@
+.mainNavDiv {
+  border: 1px solid red;
+  justify-content: end;
+  align-items: center;
+}
