@@ -6,17 +6,23 @@ import {
   OutlinedInput,
 } from "@mui/material";
 
-const SearchInput = () => {
+const SearchInput = ({
+  handleInputChange,
+  handleSearch,
+}: {
+  handleInputChange: React.Dispatch<React.SetStateAction<string>>;
+  handleSearch: () => void;
+}) => {
   return (
     <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
       <OutlinedInput
         type="search"
+        onChange={(e) => handleInputChange(e.target.value)}
         endAdornment={
           <InputAdornment position="end">
             <IconButton
               aria-label="toggle password visibility"
-              //   onClick={handleClickShowPassword}
-              //   onMouseDown={handleMouseDownPassword}
+                onClick={handleSearch}
               edge="end"
             >
               <Search />

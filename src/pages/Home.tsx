@@ -23,16 +23,24 @@ const Home = () => {
     setData(res?.data?.results);
   };
 
+  const handleSearch = () => {
+    setPage(1);
+  };
+
   useEffect(() => {
-    getData();
-  }, [page, query]);
+    // getData();
+  }, [page]);
 
   return (
     <div>
-      <Navbar />
+      <Navbar handleInputChange={setQuery} handleSearch={handleSearch} />
       <ListView data={data || []} />
       {/* onChange={handleChange} */}
-      <PaginationButton count={totalPage || 0} page={page} />
+      <PaginationButton
+        count={totalPage || 10}
+        page={page}
+        onChange={(event: React.ChangeEvent, page: number) => setPage(page)}
+      />
     </div>
   );
 };
