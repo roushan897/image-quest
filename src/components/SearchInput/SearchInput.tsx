@@ -9,9 +9,11 @@ import {
 const SearchInput = ({
   handleInputChange,
   handleSearch,
+  value,
 }: {
   handleInputChange: React.Dispatch<React.SetStateAction<string>>;
   handleSearch: () => void;
+  value: string;
 }) => {
   return (
     <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
@@ -22,7 +24,7 @@ const SearchInput = ({
           <InputAdornment position="end">
             <IconButton
               aria-label="toggle password visibility"
-                onClick={handleSearch}
+              onClick={handleSearch}
               edge="end"
             >
               <Search />
@@ -30,6 +32,7 @@ const SearchInput = ({
           </InputAdornment>
         }
         placeholder="Search"
+        value={value}
       />
     </FormControl>
   );

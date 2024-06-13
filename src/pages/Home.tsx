@@ -3,7 +3,6 @@ import Navbar from "../components/Navbar/Navbar";
 import PaginationButton from "../components/Pagination/Pagination";
 import ListView from "../components/listView/ListView";
 import { netWrapper } from "../utils/network";
-import axios from "axios";
 
 const Home = () => {
   const [page, setPage] = useState(1);
@@ -25,15 +24,16 @@ const Home = () => {
 
   const handleSearch = () => {
     setPage(1);
+    console.log(query, page);
   };
 
   useEffect(() => {
-    // getData();
+    getData();
   }, [page]);
 
   return (
     <div>
-      <Navbar handleInputChange={setQuery} handleSearch={handleSearch} />
+      <Navbar handleInputChange={setQuery} handleSearch={handleSearch} value={query} />
       <ListView data={data || []} />
       {/* onChange={handleChange} */}
       <PaginationButton
