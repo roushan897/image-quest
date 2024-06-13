@@ -1,12 +1,12 @@
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+// import { useEffect } from "react";
+// import { useParams } from "react-router-dom";
 
 const Details = () => {
-  const { id } = useParams();
+//   const { id } = useParams();
 
-  useEffect(() => {
+//   useEffect(() => {
     
-  }, []);
+//   }, []);
 
   return <div>details page</div>;
 };

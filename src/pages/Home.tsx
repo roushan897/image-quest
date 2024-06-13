@@ -35,11 +35,13 @@ const Home = () => {
     <div>
       <Navbar handleInputChange={setQuery} handleSearch={handleSearch} value={query} />
       <ListView data={data || []} />
-      {/* onChange={handleChange} */}
       <PaginationButton
         count={totalPage || 10}
         page={page}
-        onChange={(event: React.ChangeEvent, page: number) => setPage(page)}
+        onChange={(event: React.ChangeEvent, page: number) =>{
+            console.log(event);
+            setPage(page)
+        }}
       />
     </div>
   );
